@@ -1,0 +1,11 @@
+services:
+  db:
+    image: mysql:latest
+    container_name: meuContanierSQL
+    environment:
+      MYSQL_ROOT_PASSWORD: senhaDB
+      MYSQL_DATABASE: Telefonia
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
